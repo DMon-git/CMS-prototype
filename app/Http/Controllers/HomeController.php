@@ -55,18 +55,11 @@ class HomeController extends Controller
     /**
      *  Возвращает страницу с таблицей всех плагинов
      */
-    public function pluginsMarket()
+    public function plugins()
     {
-        return view('pluginsMarket');
+        return view('plugins');
     }
 
-    /**
-     *  Возвращает страницу с таблицей скаченных плагинов
-     */
-    public function adminAllPlugins()
-    {
-        return view('adminAllPlugins');
-    }
 
     /**
      *  Возвращает создания пользователя
