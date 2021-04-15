@@ -108,41 +108,6 @@
         ]
     },
     {
-        "name": "dnoegel/php-xdg-base-dir",
-        "version": "v0.1.1",
-        "version_normalized": "0.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/dnoegel/php-xdg-base-dir.git",
-            "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/dnoegel/php-xdg-base-dir/zipball/8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
-            "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~7.0|~6.0|~5.0|~4.8.35"
-        },
-        "time": "2019-12-04T15:06:13+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "XdgBaseDir\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "implementation of xdg base directory specification for php"
-    },
-    {
         "name": "doctrine/inflector",
         "version": "2.0.3",
         "version_normalized": "2.0.3.0",
@@ -507,17 +472,17 @@
     },
     {
         "name": "facade/flare-client-php",
-        "version": "1.6.1",
-        "version_normalized": "1.6.1.0",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/facade/flare-client-php.git",
-            "reference": "f2b0969f2d9594704be74dbeb25b201570a98098"
+            "reference": "6bf380035890cb0a09b9628c491ae3866b858522"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/facade/flare-client-php/zipball/f2b0969f2d9594704be74dbeb25b201570a98098",
-            "reference": "f2b0969f2d9594704be74dbeb25b201570a98098",
+            "url": "https://api.github.com/repos/facade/flare-client-php/zipball/6bf380035890cb0a09b9628c491ae3866b858522",
+            "reference": "6bf380035890cb0a09b9628c491ae3866b858522",
             "shasum": ""
         },
         "require": {
@@ -533,7 +498,7 @@
             "phpunit/phpunit": "^7.5.16",
             "spatie/phpunit-snapshot-assertions": "^2.0"
         },
-        "time": "2021-04-08T08:50:01+00:00",
+        "time": "2021-04-12T09:30:36+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1297,17 +1262,17 @@
     },
     {
         "name": "laravel/framework",
-        "version": "v8.36.2",
-        "version_normalized": "8.36.2.0",
+        "version": "v8.37.0",
+        "version_normalized": "8.37.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "0debd8ad6b5aa1f61ccc73910adf049af4ca0444"
+            "reference": "cf4082973abc796ec285190f0603380021f6d26f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/0debd8ad6b5aa1f61ccc73910adf049af4ca0444",
-            "reference": "0debd8ad6b5aa1f61ccc73910adf049af4ca0444",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/cf4082973abc796ec285190f0603380021f6d26f",
+            "reference": "cf4082973abc796ec285190f0603380021f6d26f",
             "shasum": ""
         },
         "require": {
@@ -1421,7 +1386,7 @@
             "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
             "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
         },
-        "time": "2021-04-07T12:37:22+00:00",
+        "time": "2021-04-13T13:49:49+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1463,17 +1428,17 @@
     },
     {
         "name": "laravel/sail",
-        "version": "v1.4.11",
-        "version_normalized": "1.4.11.0",
+        "version": "v1.4.12",
+        "version_normalized": "1.4.12.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/sail.git",
-            "reference": "e46a3228da4e95a411a981ac807bd119ab2485fa"
+            "reference": "d1a91b03885c9c29bc2d88d61a4b10bd1f678156"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/sail/zipball/e46a3228da4e95a411a981ac807bd119ab2485fa",
-            "reference": "e46a3228da4e95a411a981ac807bd119ab2485fa",
+            "url": "https://api.github.com/repos/laravel/sail/zipball/d1a91b03885c9c29bc2d88d61a4b10bd1f678156",
+            "reference": "d1a91b03885c9c29bc2d88d61a4b10bd1f678156",
             "shasum": ""
         },
         "require": {
@@ -1482,7 +1447,7 @@
             "illuminate/support": "^8.0|^9.0",
             "php": "^7.3|^8.0"
         },
-        "time": "2021-04-06T14:00:39+00:00",
+        "time": "2021-04-13T15:35:40+00:00",
         "bin": [
             "bin/sail"
         ],
@@ -2249,6 +2214,41 @@
             "parser",
             "php"
         ]
+    },
+    {
+        "name": "nikitinuser/users-cms-prototype",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/NikitinUser/usersCMSPrototype.git",
+            "reference": "a4168257583f3d0918f479c0a023631ab60a4729"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/NikitinUser/usersCMSPrototype/zipball/a4168257583f3d0918f479c0a023631ab60a4729",
+            "reference": "a4168257583f3d0918f479c0a023631ab60a4729",
+            "shasum": ""
+        },
+        "time": "2021-04-15T18:44:24+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "NikitinUser\\usersCMSPrototype\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "NikitinUser",
+                "email": "jo.kent@mail.ru"
+            }
+        ],
+        "description": "plugin for prototype cms"
     },
     {
         "name": "nunomaduro/collision",
@@ -3497,21 +3497,20 @@
     },
     {
         "name": "psy/psysh",
-        "version": "v0.10.7",
-        "version_normalized": "0.10.7.0",
+        "version": "v0.10.8",
+        "version_normalized": "0.10.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "a395af46999a12006213c0c8346c9445eb31640c"
+            "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/a395af46999a12006213c0c8346c9445eb31640c",
-            "reference": "a395af46999a12006213c0c8346c9445eb31640c",
+            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e4573f47750dd6c92dca5aee543fa77513cbd8d3",
+            "reference": "e4573f47750dd6c92dca5aee543fa77513cbd8d3",
             "shasum": ""
         },
         "require": {
-            "dnoegel/php-xdg-base-dir": "0.1.*",
             "ext-json": "*",
             "ext-tokenizer": "*",
             "nikic/php-parser": "~4.0|~3.0|~2.0|~1.3",
@@ -3530,7 +3529,7 @@
             "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history.",
             "hoa/console": "A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit."
         },
-        "time": "2021-03-14T02:14:56+00:00",
+        "time": "2021-04-10T16:23:39+00:00",
         "bin": [
             "bin/psysh"
         ],

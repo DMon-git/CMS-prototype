@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        //NikitinUser\usersCMSPrototype\UsersCMSPrototypeProvider::class,
         /*
          * Package Service Providers...
          */

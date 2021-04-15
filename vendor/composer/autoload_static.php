@@ -47,10 +47,6 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'X' => 
-        array (
-            'XdgBaseDir\\' => 11,
-        ),
         'W' => 
         array (
             'Whoops\\' => 7,
@@ -115,6 +111,7 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'N' => 
         array (
             'NunoMaduro\\Collision\\' => 21,
+            'NikitinUser\\usersCMSPrototype\\' => 30,
         ),
         'M' => 
         array (
@@ -191,10 +188,6 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-        ),
-        'XdgBaseDir\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
         ),
         'Whoops\\' => 
         array (
@@ -372,6 +365,10 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
         ),
+        'NikitinUser\\usersCMSPrototype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikitinuser/users-cms-prototype',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -520,7 +517,17 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
+        'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
+        'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/PluginController.php',
+        'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
+        'App\\Http\\Controllers\\VisitorsController' => __DIR__ . '/../..' . '/app/Http/Controllers/VisitorsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -530,6 +537,9 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
+        'App\\Models\\Plugins' => __DIR__ . '/../..' . '/app/Models/Plugins.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -2161,6 +2171,7 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'Illuminate\\Http\\Client\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Factory.php',
         'Illuminate\\Http\\Client\\HttpClientException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/HttpClientException.php',
         'Illuminate\\Http\\Client\\PendingRequest' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/PendingRequest.php',
+        'Illuminate\\Http\\Client\\Pool' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Pool.php',
         'Illuminate\\Http\\Client\\Request' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Request.php',
         'Illuminate\\Http\\Client\\RequestException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/RequestException.php',
         'Illuminate\\Http\\Client\\Response' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Client/Response.php',
@@ -3049,6 +3060,7 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Test\\TestCase' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Test/TestCase.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'NikitinUser\\usersCMSPrototype\\UsersCMSPrototypeProvider' => __DIR__ . '/..' . '/nikitinuser/users-cms-prototype/UsersCMSPrototypeProvider.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Laravel/CollisionServiceProvider.php',
         'NunoMaduro\\Collision\\Adapters\\Laravel\\Commands\\TestCommand' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Laravel/Commands/TestCommand.php',
@@ -3939,6 +3951,7 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'Psy\\ConsoleColorFactory' => __DIR__ . '/..' . '/psy/psysh/src/ConsoleColorFactory.php',
         'Psy\\Context' => __DIR__ . '/..' . '/psy/psysh/src/Context.php',
         'Psy\\ContextAware' => __DIR__ . '/..' . '/psy/psysh/src/ContextAware.php',
+        'Psy\\EnvInterface' => __DIR__ . '/..' . '/psy/psysh/src/EnvInterface.php',
         'Psy\\Exception\\BreakException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/BreakException.php',
         'Psy\\Exception\\DeprecatedException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/DeprecatedException.php',
         'Psy\\Exception\\ErrorException' => __DIR__ . '/..' . '/psy/psysh/src/Exception/ErrorException.php',
@@ -3984,6 +3997,7 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'Psy\\Shell' => __DIR__ . '/..' . '/psy/psysh/src/Shell.php',
         'Psy\\Sudo' => __DIR__ . '/..' . '/psy/psysh/src/Sudo.php',
         'Psy\\Sudo\\SudoVisitor' => __DIR__ . '/..' . '/psy/psysh/src/Sudo/SudoVisitor.php',
+        'Psy\\SuperglobalsEnv' => __DIR__ . '/..' . '/psy/psysh/src/SuperglobalsEnv.php',
         'Psy\\TabCompletion\\AutoCompleter' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/AutoCompleter.php',
         'Psy\\TabCompletion\\Matcher\\AbstractContextAwareMatcher' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php',
         'Psy\\TabCompletion\\Matcher\\AbstractDefaultParametersMatcher' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php',
@@ -5130,7 +5144,6 @@ class ComposerStaticInit3a9a80dbc70d19f7d68a0e3fe9eb8873
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
-        'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

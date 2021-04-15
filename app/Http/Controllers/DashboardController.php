@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
  *  класс возвращает только html страницы
  *  для оперирования бизнес-логикой используются остальные контроллеры
  */
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -59,22 +59,4 @@ class HomeController extends Controller
     {
         return view('plugins');
     }
-
-
-    /**
-     *  Возвращает создания пользователя
-     *//*
-    public function adminCreateUser()
-    {
-        return view('adminCreateUser');
-    }
-    
-    /**
-     *  Возвращает страницу с таблицей всех пользователей
-     *//*
-    public function adminAllUsers()
-    {
-        return view('adminAllUsers');
-    }
-    */
 }
