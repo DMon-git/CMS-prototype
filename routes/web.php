@@ -36,8 +36,5 @@ Route::get('/updPost', [App\Http\Controllers\HomeController::class, 'updPost'])-
 //	страница всех записей
 Route::get('/adminAllPosts', [App\Http\Controllers\HomeController::class, 'adminAllPosts'])->name('adminAllPosts');
 
-//	страница маркетплейса
-Route::get('/pluginsMarket', [App\Http\Controllers\HomeController::class, 'pluginsMarket'])->name('pluginsMarket');
-
-//	страница скаченных плагинов
-Route::get('/adminAllPlugins', [App\Http\Controllers\HomeController::class, 'adminAllPlugins'])->name('adminAllPlugins');
+//	страница плагинов
+Route::get('/plugins', [App\Http\Controllers\HomeController::class, 'plugins'])->name('plugins');
