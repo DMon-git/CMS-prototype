@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 //	все запси
 Route::get('/', function () {
     return view('main');
-});
+})->name('main');
 //	одна запись
 Route::get('/post', function () {
     return view('post');
-});
+})->name('post');
 
 
 Auth::routes();
@@ -36,8 +36,8 @@ Route::get('/updPost', [App\Http\Controllers\HomeController::class, 'updPost'])-
 //	страница всех записей
 Route::get('/adminAllPosts', [App\Http\Controllers\HomeController::class, 'adminAllPosts'])->name('adminAllPosts');
 
-//	страница изменения записи
+//	страница маркетплейса
 Route::get('/pluginsMarket', [App\Http\Controllers\HomeController::class, 'pluginsMarket'])->name('pluginsMarket');
 
-//	страница всех записей
+//	страница скаченных плагинов
 Route::get('/adminAllPlugins', [App\Http\Controllers\HomeController::class, 'adminAllPlugins'])->name('adminAllPlugins');
