@@ -25,16 +25,16 @@ Route::get('/post', function () {
 
 Auth::routes();
 //	главная страница личного кабинета
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
 //	страница создания записи
-Route::get('/createPost', [App\Http\Controllers\HomeController::class, 'createPost'])->name('createPost');
+Route::get('/createPost', [App\Http\Controllers\DashboardController::class, 'createPost'])->name('createPost');
 
 //	страница изменения записи
-Route::get('/updPost', [App\Http\Controllers\HomeController::class, 'updPost'])->name('updPost');
+Route::get('/updPost', [App\Http\Controllers\DashboardController::class, 'updPost'])->name('updPost');
 
 //	страница всех записей
-Route::get('/adminAllPosts', [App\Http\Controllers\HomeController::class, 'adminAllPosts'])->name('adminAllPosts');
+Route::get('/adminAllPosts', [App\Http\Controllers\DashboardController::class, 'adminAllPosts'])->name('adminAllPosts');
 
 //	страница плагинов
-Route::get('/plugins', [App\Http\Controllers\HomeController::class, 'plugins'])->name('plugins');
+Route::get('/plugins', [App\Http\Controllers\DashboardController::class, 'plugins'])->name('plugins');
