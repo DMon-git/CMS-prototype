@@ -11,3 +11,9 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+
+<script src="{{ asset('js/pluginsPage.js') }}" ></script>
+
+@endsection

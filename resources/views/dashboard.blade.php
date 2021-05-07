@@ -14,3 +14,9 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+
+<script src="{{ asset('js/dashboardPage.js') }}" ></script>
+
+@endsection

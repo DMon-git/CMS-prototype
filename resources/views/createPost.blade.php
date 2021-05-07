@@ -24,3 +24,9 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+
+<script src="{{ asset('js/createPostPage.js') }}" ></script>
+
+@endsection

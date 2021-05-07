@@ -11,3 +11,9 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+
+<script src="{{ asset('js/mainPage.js') }}" ></script>
+
+@endsection
