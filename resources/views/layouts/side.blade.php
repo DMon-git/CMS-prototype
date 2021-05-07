@@ -1,4 +1,4 @@
-<div class="app-body bg-secondary h-100">
+<div class="app-body bg-dark h-100">
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav d-flex flex-column">
@@ -20,11 +20,7 @@
     		</li>
 
     		<li class="nav-item">
-      		<a class="nav-link text-white" href="/pluginsMarket"><i class="icon-speedometer"></i> Маркет</a>
-    		</li>
-
-    		<li class="nav-item">
-      		<a class="nav-link text-white" href="/adminAllPlugins"><i class="icon-speedometer"></i> Плагины</a>
+      		<a class="nav-link text-white" href="/plugins"><i class="icon-speedometer"></i> Плагины</a>
     		</li>
 
         @include('layouts.sidePlugins')

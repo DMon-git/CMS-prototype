@@ -36,7 +36,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm  bg-secondary">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm  bg-dark">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     {{ config('app.name', 'CMS-Prototype') }}
@@ -100,5 +100,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('script')
 </body>
 </html>
