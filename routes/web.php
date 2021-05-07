@@ -25,6 +25,8 @@ Route::get('/post', function () {
 })->name('post');
 
 //  -----   Действия   -----  //
+Route::post('/getposts', [App\Http\Controllers\VisitorsController::class, 'getAllPosts']);
+Route::post('/getonepost', [App\Http\Controllers\VisitorsController::class, 'getOnePost']);
 
 //  -------------------------   С авторизацией   ------------------------  //
 Auth::routes();

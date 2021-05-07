@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Repositories\PostRepository;
 use Illuminate\Support\Facades\Log;
 
-class Post
+class Post extends PostRepository
 {
 
 }
