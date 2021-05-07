@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card" id="div_posts">
-                Тут будут посты
+                Тут будут плагины
             </div>
         </div>
     </div>
@@ -14,6 +14,6 @@
 
 @section('script')
 
-<script src="{{ asset('js/mainPage.js') }}" ></script>
+<script src="{{ asset('js/pluginsPage.js') }}" ></script>
 
 @endsection
