@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//  ------------------------   Без авторизации   ------------------------  //
+    //  -----   Возврат вьюх   -----  //
 //	все запси
 Route::get('/', function () {
     return view('main');
@@ -22,19 +24,35 @@ Route::get('/post', function () {
     return view('post');
 })->name('post');
 
+//  -----   Действия   -----  //
 
+//  -------------------------   С авторизацией   ------------------------  //
 Auth::routes();
+
+        //  -----   Пользователь   -----  //
+    //  -----   Возврат вьюх   -----  //
 //	главная страница личного кабинета
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
+    //  -----   Действия   -----  //
+Route::post('/getuserinfo', [App\Http\Controllers\DashboardController::class, 'getUserInfo']);
+//-----------------------------------------------------------------------------------------------------------//
+        //  -----   Админ   -----  //
+    //  -----   Возврат вьюх   -----  //
 //	страница создания записи
-Route::get('/createPost', [App\Http\Controllers\DashboardController::class, 'createPost'])->name('createPost');
+Route::get('/createPost', [App\Http\Controllers\PostController::class, 'createPost'])->name('createPost');
 
 //	страница изменения записи
-Route::get('/updPost', [App\Http\Controllers\DashboardController::class, 'updPost'])->name('updPost');
+Route::get('/updPost', [App\Http\Controllers\PostController::class, 'updPost'])->name('updPost');
 
 //	страница всех записей
-Route::get('/adminAllPosts', [App\Http\Controllers\DashboardController::class, 'adminAllPosts'])->name('adminAllPosts');
+Route::get('/adminAllPosts', [App\Http\Controllers\PostController::class, 'adminAllPosts'])->name('adminAllPosts');
 
 //	страница плагинов
-Route::get('/plugins', [App\Http\Controllers\DashboardController::class, 'plugins'])->name('plugins');
+Route::get('/plugins', [App\Http\Controllers\PluginController::class, 'plugins'])->name('plugins');
+
+    //  -----   Действия   -----  //
+
+
+
+
