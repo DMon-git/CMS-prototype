@@ -15,4 +15,28 @@ class PostController extends Controller
     {
         $this->middleware('auth');
     }
+
+    /**
+     *  Возвращает страницу создание поста
+     */
+    public function createPost()
+    {
+        return view('createPost');
+    }
+
+    /**
+     *  Возвращает страницу изменения поста
+     */
+    public function updPost()
+    {
+        return view('updPost');
+    }
+
+    /**
+     *  Возвращает страницу с таблицей всех постов
+     */
+    public function adminAllPosts()
+    {
+        return view('adminAllPosts');
+    }
 }

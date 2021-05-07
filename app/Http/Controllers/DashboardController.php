@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 /**
  *  класс возвращает только html страницы
@@ -29,34 +30,14 @@ class DashboardController extends Controller
     }
 
     /**
-     *  Возвращает страницу создание поста
+     * Возвращаем информацию о пользователе на страницу личного кабинета
+     *
+     * @return false|string
      */
-    public function createPost()
+    public function getUserInfo()
     {
-        return view('createPost');
-    }
-
-    /**
-     *  Возвращает страницу изменения поста
-     */
-    public function updPost()
-    {
-        return view('updPost');
-    }
-
-    /**
-     *  Возвращает страницу с таблицей всех постов
-     */
-    public function adminAllPosts()
-    {
-        return view('adminAllPosts');
-    }
-
-    /**
-     *  Возвращает страницу с таблицей всех плагинов
-     */
-    public function plugins()
-    {
-        return view('plugins');
+        $data = $this->getUserInfo();
+        $data = json_encode($data);
+        return $data;
     }
 }
