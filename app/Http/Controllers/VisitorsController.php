@@ -19,7 +19,7 @@ class VisitorsController extends Controller
      */
     public function __construct()
     {
-
+    	$this->Post = new Post();
     }
 
     /**
@@ -31,7 +31,8 @@ class VisitorsController extends Controller
         //  валидация
 
         $page = $request->input('page');
-        $data = Post::getToPage($page);
+        
+        $data = $this->Post->getToPage($page); 
 
         return json_encode($data);
     }
@@ -43,7 +44,7 @@ class VisitorsController extends Controller
     public function getOnePost(Request $request)
     {
         $idPost = $request->input('id');
-        $data = Post::getOnePost($idPost);
+        $data = $this->Post->getOnePost($idPost);
 
         return json_encode($data);
     }
