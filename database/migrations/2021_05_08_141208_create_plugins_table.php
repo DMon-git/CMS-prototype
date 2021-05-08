@@ -20,6 +20,7 @@ class CreatePluginsTable extends Migration
             $table->string('description');
             $table->string('requireComand');
             $table->string('deleteComand');
+            $table->string('sideFile');
             $table->integer('status')->default(0);
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

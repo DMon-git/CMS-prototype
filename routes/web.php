@@ -75,3 +75,12 @@ Route::post('/updatePost', [App\Http\Controllers\PostController::class, 'updateP
 
 //  Создать пост 
 Route::post('/addPost', [App\Http\Controllers\PostController::class, 'addPost']);
+
+//  Получение данных о плагинах
+Route::post('/getPlugins', [App\Http\Controllers\PluginController::class, 'getAllPlugins']);
+
+//  Установка плагина
+Route::post('/installPlugin', [App\Http\Controllers\PluginController::class, 'installPlugin']);
+
+//  Удаление плагина
+Route::post('/deletePlugin', [App\Http\Controllers\PluginController::class, 'deletePlugin']);
