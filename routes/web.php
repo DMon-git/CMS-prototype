@@ -30,6 +30,9 @@ Route::post('/getposts', [App\Http\Controllers\VisitorsController::class, 'getAl
 //  Получить конкретный пост
 Route::post('/getonepost', [App\Http\Controllers\VisitorsController::class, 'getOnePost']);
 
+//  Получить комментарии к посту
+Route::post('/getComments', [App\Http\Controllers\VisitorsController::class, 'getComments']);
+
 //  -------------------------   С авторизацией   ------------------------  //
 Auth::routes();
 
@@ -39,7 +42,12 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
     //  -----   Действия   -----  //
+//	Вывод информации о пользователе
 Route::post('/getuserinfo', [App\Http\Controllers\DashboardController::class, 'getUserInfo']);
+
+//  Добавить комментарий 
+Route::post('/addComment', [App\Http\Controllers\CommentController::class, 'addComment']);
+
 //-----------------------------------------------------------------------------------------------------------//
         //  -----   Админ   -----  //
     //  -----   Возврат вьюх   -----  //

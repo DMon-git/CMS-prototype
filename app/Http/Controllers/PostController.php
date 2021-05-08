@@ -87,7 +87,7 @@ class PostController extends Controller
     /**
      * 
      */
-    public function addPost()
+    public function addPost(Request $request)
     {
         //  валидация
         //$data = $request->all();
