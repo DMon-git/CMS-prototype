@@ -67,4 +67,15 @@ class PostController extends Controller
         $result = $this->Post->deletePost($idPost);
         return $result;
     }
+
+    public function updatePost(Request $request)
+    {
+        $data['idPost'] = $request->input('id');
+        $data['titlePost'] = $request->input('title');
+        $data['contentPost'] = $request->input('content');
+        $data['publishPost']= $request->input('publish');
+
+        $result = $this->Post->updatePost($data);
+        return $result;
+    }
 }

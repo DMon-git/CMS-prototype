@@ -59,8 +59,9 @@ Route::get('/plugins', [App\Http\Controllers\PluginController::class, 'plugins']
 //  Получить записи для вывода в таблицу админа
 Route::post('/getTableAllPosts', [App\Http\Controllers\PostController::class, 'getTablePosts']);
 
-//  Получить записи для вывода в таблицу админа
+//  Удалить пост по id
 Route::post('/deletePost', [App\Http\Controllers\PostController::class, 'deletePost']);
 
-
+//  Обновить пост по id
+Route::post('/updatePost', [App\Http\Controllers\PostController::class, 'updatePost']);
 

@@ -16,4 +16,18 @@ class Post extends PostRepository
 
         return $result;
     }
+
+    /**
+     *
+     */
+    public function updatePost($data)
+    {
+        $result =  $this->where('id', '=', $data['id'])
+                        ->update([
+                            'title'   => $data['title'],
+                            'content' => $data['content'],
+                            'publish' => $data['publish'],
+                        ]);
+        return $result;
+    }
 }
