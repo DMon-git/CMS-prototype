@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
 
-	protected $table = 'postComments';
+	protected $table = 'post_comments';
 
 	public function addComment($data)
     {
@@ -24,11 +24,11 @@ class Comment extends Model
 
     public function getCommentsOnPost($idPost)
     {
-    	$columns = ['id', 'id_post', 'id_user', 'comment', 'date_add', 'name'];
+    	$columns = ['id', 'id_post', 'id_user', 'comment', 'created_at', 'name'];
 
     	$data = $this->select($columns)
                      ->where('id_post', '=', $idPost)
-                     ->join('users', 'users.id', '=', 'postComments.id_user')
+                     ->join('users', 'users.id', '=', 'post_comments.id_user')
                      ->get()
                      ->toArray();
 

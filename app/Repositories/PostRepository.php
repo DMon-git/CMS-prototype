@@ -20,7 +20,7 @@ class PostRepository extends Model implements PostRepositoryInterface
     public function getToPage($page)
     {
         $perPage = 10;  //  10 постов на страницу
-        $columns = ['id', 'title', 'content', 'publish', 'date_add'];
+        $columns = ['id', 'title', 'content', 'publish', 'created_at'];
 
         $endBetween = $page * $perPage;
         $beginBetween = $endBetween - $perPage + 1;
@@ -41,7 +41,7 @@ class PostRepository extends Model implements PostRepositoryInterface
     public function getToTable($page)
     {
         $perPage = 30;  //  10 постов на страницу
-        $columns = ['id', 'title', 'publish', 'date_add', 'uid_add'];
+        $columns = ['id', 'title', 'publish', 'created_at', 'uid_add'];
 
         $endBetween = $page * $perPage;
         $beginBetween = $endBetween - $perPage + 1;
@@ -57,7 +57,7 @@ class PostRepository extends Model implements PostRepositoryInterface
 
     public function getOnePost($idPost)
     {
-        $columns = ['id', 'title', 'content', 'publish', 'date_add'];
+        $columns = ['id', 'title', 'content', 'publish', 'created_at'];
 
         $data = $this->select($columns)
             ->where('id', '=', $idPost)
