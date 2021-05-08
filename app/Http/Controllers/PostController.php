@@ -68,14 +68,35 @@ class PostController extends Controller
         return $result;
     }
 
+    /**
+     * 
+     */
     public function updatePost(Request $request)
     {
+        //  валидация
+        //$data = $request->all();
         $data['idPost'] = $request->input('id');
         $data['titlePost'] = $request->input('title');
         $data['contentPost'] = $request->input('content');
         $data['publishPost']= $request->input('publish');
 
         $result = $this->Post->updatePost($data);
+        return $result;
+    }
+
+    /**
+     * 
+     */
+    public function addPost()
+    {
+        //  валидация
+        //$data = $request->all();
+        $data['idPost'] = $request->input('id');
+        $data['titlePost'] = $request->input('title');
+        $data['contentPost'] = $request->input('content');
+        $data['publishPost']= $request->input('publish');
+
+        $result = $this->Post->addPost($data);
         return $result;
     }
 }

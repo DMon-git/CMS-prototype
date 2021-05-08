@@ -30,4 +30,16 @@ class Post extends PostRepository
                         ]);
         return $result;
     }
+
+    public function addPost($data)
+    {
+        //'uid_add' => $data['uid_add'],
+        $result = $this->insertGetId([
+                    'title'   => $data['title'],
+                    'content' => $data['content'],
+                    'publish' => $data['publish'],
+
+                ]);
+        return $result;
+    }
 }

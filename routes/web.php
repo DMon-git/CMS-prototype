@@ -65,3 +65,5 @@ Route::post('/deletePost', [App\Http\Controllers\PostController::class, 'deleteP
 //  Обновить пост по id
 Route::post('/updatePost', [App\Http\Controllers\PostController::class, 'updatePost']);
 
+//  Создать пост 
+Route::post('/addPost', [App\Http\Controllers\PostController::class, 'addPost']);
