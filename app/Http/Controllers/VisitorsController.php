@@ -32,9 +32,9 @@ class VisitorsController extends Controller
 
         $page = $request->input('page');
         
-        $data = $this->Post->getToPage($page); 
-
-        return json_encode($data);
+        $data = $this->Post->getToPage($page);
+        $data = json_encode($data);
+        return $data;
     }
 
     /**
@@ -45,7 +45,7 @@ class VisitorsController extends Controller
     {
         $idPost = $request->input('id');
         $data = $this->Post->getOnePost($idPost);
-
-        return json_encode($data);
+        $data = json_encode($data);
+        return $data;
     }
 }

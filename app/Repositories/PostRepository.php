@@ -10,6 +10,9 @@ class PostRepository extends Model implements PostRepositoryInterface
 
     protected $table = 'posts';
 
+    public const PUBLISH_ON = 1;
+    public const PUBLISH_OFF = 0;
+
     /**
      * @param $page
      * @return mixed|void
@@ -23,9 +26,31 @@ class PostRepository extends Model implements PostRepositoryInterface
         $beginBetween = $endBetween - $perPage + 1;
 
         $data = $this->select($columns)
-                        ->whereBetween('id', [$beginBetween, $endBetween])
+                        ->where('id', '>=', $beginBetween)
+                        ->where('publish', '=', self::PUBLISH_ON)
+                        ->limit($perPage)
                         ->get()
                         ->toArray();
+
+        return $data;
+    }
+
+    /**
+     *
+     */
+    public function getToTable($page)
+    {
+        $perPage = 30;  //  10 постов на страницу
+        $columns = ['id', 'title', 'publish', 'date_add', 'uid_add'];
+
+        $endBetween = $page * $perPage;
+        $beginBetween = $endBetween - $perPage + 1;
+
+        $data = $this->select($columns)
+            ->where('id', '>=', $beginBetween)
+            ->limit($perPage)
+            ->get()
+            ->toArray();
 
         return $data;
     }

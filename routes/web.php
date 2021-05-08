@@ -25,7 +25,9 @@ Route::get('/post', function () {
 })->name('post');
 
 //  -----   Действия   -----  //
+//  Получить все посты на страницу
 Route::post('/getposts', [App\Http\Controllers\VisitorsController::class, 'getAllPosts']);
+//  Получить конкретный пост
 Route::post('/getonepost', [App\Http\Controllers\VisitorsController::class, 'getOnePost']);
 
 //  -------------------------   С авторизацией   ------------------------  //
@@ -54,7 +56,11 @@ Route::get('/adminAllPosts', [App\Http\Controllers\PostController::class, 'admin
 Route::get('/plugins', [App\Http\Controllers\PluginController::class, 'plugins'])->name('plugins');
 
     //  -----   Действия   -----  //
+//  Получить записи для вывода в таблицу админа
+Route::post('/getTableAllPosts', [App\Http\Controllers\PostController::class, 'getTablePosts']);
 
+//  Получить записи для вывода в таблицу админа
+Route::post('/deletePost', [App\Http\Controllers\PostController::class, 'deletePost']);
 
 
 
