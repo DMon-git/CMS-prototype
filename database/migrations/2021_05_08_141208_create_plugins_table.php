@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreatePluginsTable extends Migration
 {
@@ -20,7 +21,8 @@ class CreatePluginsTable extends Migration
             $table->string('requireComand');
             $table->string('deleteComand');
             $table->integer('status')->default(0);
-            $table->timestamps()->default(DB::raw('CURRENT_TIMESTAMP');
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
