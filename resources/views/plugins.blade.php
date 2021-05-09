@@ -4,9 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card" id="div_posts">
-                Тут будут плагины
-            </div>
+            <table id="plugins_table" class="table">
+            	<thead>
+            		<th>№</th>
+            		<th>Название</th>
+            		<th>Описание</th>
+            		<th>Стутус</th>
+            		<th>Действие</th>
+            	</thead>
+            </table>
         </div>
     </div>
 </div>

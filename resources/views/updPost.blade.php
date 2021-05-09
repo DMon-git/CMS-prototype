@@ -4,16 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-        	<center><h4>Создать пост</h4></center>
+            <center><h4>Создать пост</h4></center>
             <div class="card p-3" id="div_create_posts">
-            	<div class="mb-3">
-            		<label class="form-label">Название поста</label>
-               		<input type="text" name="name_post" id="name_post" class="form-control">
-            	</div>
+                <div class="mb-3">
+                    <label class="form-label">Название поста</label>
+                    <input type="text" name="name_post" id="name_post" class="form-control">
+                </div>
                 
                 <div class="mb-3">
-                	<label class="form-label">Содержание поста</label><br>
-                	<textarea class="form-control" cols="30" rows="10" id="contentPost"></textarea>
+                    <label class="form-label">Содержание поста</label><br>
+                    <textarea class="form-control" cols="30" rows="10" id="contentPost"></textarea>
                 </div>
 
                 <div class="mb-3">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="mb-3">
-                	<input type="button" name="btn_create_post" id="btn_create_post" class="btn btn-secondary" value="Создать пост" onclick="createPost()">
+                    <input type="button" name="btn_create_post" id="btn_create_post" class="btn btn-outline-primary" value="Сохранить изменения" onclick="saveChangePost()">
                 </div>
             </div>
         </div>
@@ -34,6 +34,6 @@
 
 @section('script')
 
-<script src="{{ asset('js/createPostPage.js') }}" ></script>
+<script src="{{ asset('js/updPost.js') }}" ></script>
 
 @endsection
