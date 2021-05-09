@@ -38,6 +38,7 @@ class Post extends PostRepository
                     'title'   => $data['title'],
                     'content' => $data['content'],
                     'publish' => $data['publish'],
+                    'uid_add' => $data['uid_add'],
 
                 ]);
         return $result;

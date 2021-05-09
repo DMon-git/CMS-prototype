@@ -75,13 +75,13 @@ class PostController extends Controller
     {
         //  валидация
         //$data = $request->all();
-        $data['idPost'] = $request->input('id');
-        $data['titlePost'] = $request->input('title');
-        $data['contentPost'] = $request->input('content');
-        $data['publishPost']= $request->input('publish');
+        $data['id'] = $request->input('id');
+        $data['title'] = $request->input('title');
+        $data['content'] = $request->input('content');
+        $data['publish']= $request->input('publish');
 
         $result = $this->Post->updatePost($data);
-        return $result;
+        return true;
     }
 
     /**
@@ -91,12 +91,12 @@ class PostController extends Controller
     {
         //  валидация
         //$data = $request->all();
-        $data['idPost'] = $request->input('id');
-        $data['titlePost'] = $request->input('title');
-        $data['contentPost'] = $request->input('content');
-        $data['publishPost']= $request->input('publish');
+        $data['title'] = $request->input('title');
+        $data['content'] = $request->input('content');
+        $data['publish']= $request->input('publish');
+        $data['uid_add']= auth()->user()->id;
 
         $result = $this->Post->addPost($data);
-        return $result;
+        return true;
     }
 }
