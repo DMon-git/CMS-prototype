@@ -36,7 +36,7 @@ class DashboardController extends Controller
      */
     public function getUserInfo()
     {
-        $data = $this->getUserInfo();
+        $data = auth()->user();
         $data = json_encode($data);
         return $data;
     }
