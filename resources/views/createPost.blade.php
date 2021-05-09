@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="mb-3">
-                	<input type="button" name="btn_create_post" id="btn_create_post" class="btn btn-outline-primary" value="Создать пост" onclick="createPost()">
+                	<input type="button" name="btn_create_post" id="btn_create_post" class="btn btn-secondary" value="Создать пост" onclick="createPost()">
                 </div>
             </div>
         </div>
