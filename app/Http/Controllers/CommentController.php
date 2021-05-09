@@ -34,6 +34,6 @@ class CommentController extends Controller
         $data['comment'] = $request->input('comment');
 
         $result = $this->Comment->addComment($data);
-        return $result;
+        return true;
     }
 }
