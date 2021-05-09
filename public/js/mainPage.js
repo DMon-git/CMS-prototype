@@ -25,7 +25,7 @@ function showPosts(posts) {
 		let linkTitle = document.createElement("a");
 		linkTitle.textContent = posts[i]['title'];
 		linkTitle.href = "/post?id="+posts[i]['id'];
-		linkTitle.className = "text-dark stretched-link";
+		linkTitle.className = "text-dark";
 
 		let divContent = document.createElement("div");
 		divContent.textContent = posts[i]['content'];

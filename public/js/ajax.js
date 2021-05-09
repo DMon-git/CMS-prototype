@@ -7,17 +7,19 @@ function ajaxPost(url, params, callback){
 	var request = new XMLHttpRequest();
 	
 	request.onreadystatechange = function(){
-		if (request.status == 200) {
-			if (request.readyState==4 && request.response != ''){
+		
+		if (request.readyState==4 && request.response != ''){
+			if (request.status == 200) {
 				var myObj = request.response;
 				console.log(myObj);
 				f(myObj);
+			} else {
+				console.log(request.status);
+				console.log(request.statusText);
+				f(request.status);
 			}
-		} else {
-			console.log(request.status);
-			console.log(request.statusText);
-			f(request.status);
 		}
+		
 		
 	}
 	

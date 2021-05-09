@@ -28,7 +28,7 @@ function showTableData(data) {
 						+'</button>'
 						+'<div class="dropdown-menu" id="dropdownMenuButton_'+num.textContent+'" aria-labelledby="dropdownMenuButton_'+num.textContent+'">'
 						+' <a class="dropdown-item" href="#" onclick="deletePost(this)">Удалить</a>'
-						+' <a class="dropdown-item" href="#">Изменить</a>'
+						+' <a class="dropdown-item" href="/updPost?id='+num.textContent+'">Изменить</a>'
 						+'</div>'
 					+'</div>';
 

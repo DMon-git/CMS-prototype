@@ -90,12 +90,10 @@
             </div>
         </nav>
         @if (Auth::user()) 
-        <!--
-            <div style="float: left; height: 200vh !important;  min-height: 100vh !important; width: 15%;" class="bg-dark"> </div>
-            position:fixed;
-            height: 100vh !important;  
-        -->
-            <div style="float: left; min-height: 100vh !important; width: 15%;" id="sideBarMain">
+        
+            <div style="float: left; height: 200vh !important;  min-height: 100vh !important; width: 15%;" class="bg-dark" id="sideBarMain"> </div>
+
+            <div style="float: left; height: 100vh !important;   min-height: 100vh !important; width: 15%; position:fixed;" >
                 @include('layouts.side')
             </div>
 
