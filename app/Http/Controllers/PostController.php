@@ -42,7 +42,8 @@ class PostController extends Controller
      */
     public function adminAllPosts()
     {
-        return view('adminAllPosts');
+        $pages = $this->Post->getCountPages($this->Post::ALLPAGE_TABLE_PERPAGE);
+        return view('adminAllPosts', compact('pages'));
     }
 
     /**

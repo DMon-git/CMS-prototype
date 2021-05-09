@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 //  ------------------------   Без авторизации   ------------------------  //
     //  -----   Возврат вьюх   -----  //
+
 //	все запси
-Route::get('/', function () {
-    return view('main');
-})->name('main');
+Route::get('/', [App\Http\Controllers\VisitorsController::class, 'getAllPage'])->name('main');
 //	одна запись
-Route::get('/post', function () {
-    return view('post');
-})->name('post');
+Route::get('/post', [App\Http\Controllers\VisitorsController::class, 'getOnePage'])->name('post');
 
 //  -----   Действия   -----  //
 //  Получить все посты на страницу

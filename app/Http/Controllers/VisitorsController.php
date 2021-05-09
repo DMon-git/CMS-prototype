@@ -23,6 +23,17 @@ class VisitorsController extends Controller
     	$this->Post = new Post();
     }
 
+    public function getAllPage()
+    {
+        $pages = $this->Post->getCountPages($this->Post::MAINPAGE_PERPAGE);
+        return view('main', compact('pages'));
+    }
+
+    public function getOnePage()
+    {
+        return view('post');
+    }
+
     /**
      * @param Request $request
      * @return false|string
