@@ -20,6 +20,64 @@
             	<button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
             </div>
 
+            <!-- -->
+                <div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div>
+            <div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div>
+            <div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div>
+            <div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div>
+            <div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div><div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div>
+            <div class="mb-3">
+                <h5>Добавить комментарий:</h5>  
+                <div class="mb-3">
+                    <textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                </div>
+                
+                <button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
+            </div>
+            <!-- <-->
+
             <div class="mb-3">
             	<h5>Комментарии:</h5>
             	<div id="comments">

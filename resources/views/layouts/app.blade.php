@@ -90,9 +90,16 @@
             </div>
         </nav>
         @if (Auth::user()) 
-            <div style="float: left; height: 100vh;">
+        <!--
+            <div style="float: left; height: 200vh !important;  min-height: 100vh !important; width: 15%;" class="bg-dark"> </div>
+            position:fixed;
+            height: 100vh !important;  
+        -->
+            <div style="float: left; min-height: 100vh !important; width: 15%;" id="sideBarMain">
                 @include('layouts.side')
             </div>
+
+
         @endif
         
 
@@ -101,5 +108,12 @@
         </main>
     </div>
     @yield('script')
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+            const pageHeight = document.documentElement.scrollHeight;
+            console.log(pageHeight);
+            document.querySelector('#sideBarMain').style.height = (pageHeight + 100) + "px";
+          });
+    </script>
 </body>
 </html>
