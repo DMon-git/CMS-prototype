@@ -13,11 +13,18 @@
                 
                 <div class="mb-3">
                 	<label class="form-label">Содержание поста</label><br>
-                	<textarea class="form-control" cols="30" rows="10"></textarea>
+                	<textarea class="form-control" cols="30" rows="10" id="contentPost"></textarea>
                 </div>
 
                 <div class="mb-3">
-                	<input type="button" name="btn_create_post" id="btn_create_post" class="btn btn-outline-primary" value="Создать пост">
+                    <select class="custom-select" id="publish">
+                        <option value="1">Опубликовать</option>
+                        <option value="0">Не публиковать</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                	<input type="button" name="btn_create_post" id="btn_create_post" class="btn btn-outline-primary" value="Создать пост" onclick="createPost()">
                 </div>
             </div>
         </div>
