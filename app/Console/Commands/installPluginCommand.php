@@ -40,7 +40,6 @@ class installPluginCommand extends Command
     public function handle()
     {
         $idPlugin = intval($this->argument('idPlugin'));
-        Log::debug("TEST: " . __FUNCTION__ . " idPlugin = " . $idPlugin);
 
         $Plugin = new Plugins();
         $pluginData = $Plugin->getInstallCommandPlugin($idPlugin);
@@ -52,7 +51,7 @@ class installPluginCommand extends Command
         file_put_contents("../resources/views/layouts/sidePlugins.blade.php", $nameSideFile, FILE_APPEND);
 
         $Plugin->setStatusPlugin($idPlugin, $Plugin::STATUS_INSTALL);
-        return 0;
+        return true;
     }
 
     protected function getArguments()
