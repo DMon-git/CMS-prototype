@@ -11,7 +11,7 @@ function ajaxPost(url, params, callback){
 		if (request.readyState==4 && request.response != ''){
 			if (request.status == 200) {
 				var myObj = request.response;
-				console.log(myObj);
+				//console.log(myObj);
 				f(myObj);
 			} else {
 				console.log(request.status);
@@ -35,7 +35,7 @@ function ajaxGet(url, params, callback){
 	request.onreadystatechange = function(){
 		if (request.readyState==4 && request.response != ''){
 			var myObj = request.response;
-			console.log(myObj);
+			//console.log(myObj);
 			myObj = JSON.parse(myObj);
 			f(myObj);
 		}

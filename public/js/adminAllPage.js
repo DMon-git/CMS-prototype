@@ -70,7 +70,6 @@ function showTableData(data) {
 function deletePost(elem) {
 	
 	var idBtn = elem.parentNode.id.split("_")[1];
-	console.log(idBtn);
 
 	params = "id="+idBtn;
 	ajaxPost("/deletePost", params, function(data){
