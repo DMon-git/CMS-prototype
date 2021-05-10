@@ -14,7 +14,7 @@ class Comment extends Model
     {
         //'uid_add' => $data['uid_add'],
         $result = $this->insertGetId([
-                    'id_post'   => $data['id_post'],
+                    'id_post' => $data['id_post'],
                     'id_user' => $data['id_user'],
                     'comment' => $data['comment'],
 

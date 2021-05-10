@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
+use App\Http\Requests\IdValidateRequest;
+use App\Http\Requests\PageValidateRequest;
+use App\Http\Requests\UpdatePostRequest;
+use App\Http\Requests\AddPostRequest;
+
 class PostController extends Controller
 {
 
@@ -49,9 +54,8 @@ class PostController extends Controller
     /**
      *
      */
-    public function getTablePosts(Request $request)
+    public function getTablePosts(PageValidateRequest $request)
     {
-        //  валидация
         //  проверка прав
         $page = $request->input('page');
         $data = $this->Post->getToTable($page);
@@ -62,7 +66,7 @@ class PostController extends Controller
     /**
      *
      */
-    public function deletePost(Request $request)
+    public function deletePost(IdValidateRequest $request)
     {
         $idPost = $request->input('id');
         $result = $this->Post->deletePost($idPost);
@@ -72,15 +76,9 @@ class PostController extends Controller
     /**
      * 
      */
-    public function updatePost(Request $request)
+    public function updatePost(UpdatePostRequest $request)
     {
-        //  валидация
-        //$data = $request->all();
-        $data['id'] = $request->input('id');
-        $data['title'] = $request->input('title');
-        $data['content'] = $request->input('content');
-        $data['publish']= $request->input('publish');
-
+        $data = $request->all();
         $result = $this->Post->updatePost($data);
         return true;
     }
@@ -88,13 +86,9 @@ class PostController extends Controller
     /**
      * 
      */
-    public function addPost(Request $request)
+    public function addPost(AddPostRequest $request)
     {
-        //  валидация
-        //$data = $request->all();
-        $data['title'] = $request->input('title');
-        $data['content'] = $request->input('content');
-        $data['publish']= $request->input('publish');
+        $data = $request->all();
         $data['uid_add']= auth()->user()->id;
 
         $result = $this->Post->addPost($data);

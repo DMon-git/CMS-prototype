@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 
+use App\Http\Requests\AddCommentRequest;
+
 class CommentController extends Controller
 {
 
@@ -24,14 +26,10 @@ class CommentController extends Controller
     /**
      * 
      */
-    public function addComment(Request $request)
+    public function addComment(AddCommentRequest $request)
     {
-        //  валидация
-        //$data = $request->all();
-        $useid = intval(auth()->user()->id);
-        $data['id_post'] = $request->input('id');
-        $data['id_user'] = $useid;
-        $data['comment'] = $request->input('comment');
+        $data = $request->all();
+        $data['id_user'] = intval(auth()->user()->id);
 
         $result = $this->Comment->addComment($data);
         return true;

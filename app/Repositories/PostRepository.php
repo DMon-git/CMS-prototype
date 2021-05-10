@@ -38,6 +38,15 @@ class PostRepository extends Model implements PostRepositoryInterface
                      ->toArray();
 
         $data = $data['data'];
+
+        if (!empty($data)) {
+            for ($i = 0; $i < count($data); $i++) {
+                $data[$i]['title'] = htmlspecialchars_decode($data[$i]['title']);
+                $data[$i]['content'] = htmlspecialchars_decode($data[$i]['content']);
+            }
+        }
+        
+
         return $data;
     }
 
@@ -57,6 +66,13 @@ class PostRepository extends Model implements PostRepositoryInterface
                      ->toArray();
 
         $data = $data['data'];
+        
+        if (!empty($data)) {
+            for ($i = 0; $i < count($data); $i++) {
+                $data[$i]['title'] = htmlspecialchars_decode($data[$i]['title']);
+            }
+        }
+        
         return $data;
     }
 
@@ -68,6 +84,9 @@ class PostRepository extends Model implements PostRepositoryInterface
             ->where('id', '=', $idPost)
             ->get()
             ->toArray();
+
+        $data[0]['title'] = htmlspecialchars_decode($data[0]['title']);
+        $data[0]['content'] = htmlspecialchars_decode($data[0]['content']);
 
         return $data;
     }

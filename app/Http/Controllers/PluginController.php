@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Plugins;
 use Artisan;
 
+use App\Http\Requests\IdValidateRequest;
+
 class PluginController extends Controller
 {
 
@@ -46,7 +48,7 @@ class PluginController extends Controller
     /**
      *
      */
-    public function installPlugin(Request $request)
+    public function installPlugin(IdValidateRequest $request)
     {
         //  проверка прав
         $idPlugin = $request->input('id');
@@ -57,7 +59,7 @@ class PluginController extends Controller
     /**
      *
      */
-    public function deletePlugin(Request $request)
+    public function deletePlugin(IdValidateRequest $request)
     {
         //  проверка прав
         $idPlugin = $request->input('id');
