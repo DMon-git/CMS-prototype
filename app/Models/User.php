@@ -14,10 +14,11 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    private $arrRolesDescription = [
-                                    1 => "user",
-                                    2 => "admin"
-        ];
+    protected $arrRolesDescription = [
+                                    "user"  => 1,
+                                    "admin" => 2 
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -48,12 +49,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static function checkPermission ()
+    /**
+     * 
+     */
+    public function hasRole($role)
     {
-        $role = intval(Auth::user()->role);
-
-        if ($role != 2) {
-            
+        if (!auth()->check()) {
+            return false;
         }
+
+        if (!isset($this->arrRolesDescription[$role]) ) {
+            return false;
+        }
+
+        $needRole = $this->arrRolesDescription[$role];
+        $userRole = intval(auth()->user()->role);
+
+        if ($needRole !== $userRole) {
+            return false;
+        }
+
+        return true;
     }
 }
