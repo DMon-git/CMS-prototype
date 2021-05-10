@@ -22,6 +22,9 @@ class Post extends PostRepository
      */
     public function updatePost($data)
     {
+        $data['title'] = htmlspecialchars($data['title']);
+        $data['content'] = htmlspecialchars($data['content']);
+
         $result =  $this->where('id', '=', $data['id'])
                         ->update([
                             'title'   => $data['title'],
@@ -33,11 +36,15 @@ class Post extends PostRepository
 
     public function addPost($data)
     {
+        $data['title'] = htmlspecialchars($data['title']);
+        $data['content'] = htmlspecialchars($data['content']);
+        
         //'uid_add' => $data['uid_add'],
         $result = $this->insertGetId([
                     'title'   => $data['title'],
                     'content' => $data['content'],
                     'publish' => $data['publish'],
+                    'uid_add' => $data['uid_add'],
 
                 ]);
         return $result;

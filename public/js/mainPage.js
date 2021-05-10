@@ -6,8 +6,28 @@ window.onload = function () {
 	});
 }
 
+function getPageData(elem) {
+	page = elem.id.split("_")[1];
+	params = "page="+page;
+
+	ajaxPost("/getposts", params, function(data){
+		data = JSON.parse(data);
+		showPosts(data);
+	});
+
+	let ulPageLinks = document.querySelector("#ulPageLinks");
+	var countPages = ulPageLinks.children.length;
+
+	for (var i = 1; i <= countPages; i++) {
+		document.querySelector("#pageLink_"+i).parentNode.className = "page-item";
+	}
+
+	elem.parentNode.className = "page-item active";
+}
+
 function showPosts(posts) {
 	let div_posts = document.querySelector("#div_posts");
+	div_posts.innerHTML = "";
 
 	for (var i = 0; i < posts.length; i++) {
 		let postDiv = document.createElement("div");

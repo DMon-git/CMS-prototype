@@ -59,15 +59,19 @@ function addComment() {
 	const searchString = new URLSearchParams(window.location.search);
 	var id = searchString.get('id');
 
-	params = "id="+id+"&"+"comment="+comment.value;
+	params = "id_post="+id+"&"+"comment="+comment.value;
 	ajaxPost("/addComment", params, function(data){
 		if (data == 1) {
+			params = "id="+id;
 			ajaxPost("/getComments", params, function(data){
 				data = JSON.parse(data);
 				showComments(data);
 			});
-		} else {
+		} else if (data == 403) {
 			document.location.replace("/login");
+		} 
+		else {
+			
 		}
 	});
 	comment.value = "";

@@ -162,11 +162,15 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        NikitinUser\usersCMSPrototype\UsersCMSPrototypeProvider::class,
+        
+
+        
         /*
          * Package Service Providers...
          */
 
+        NikitinUser\usersCMSPrototype\UsersCMSPrototypeProvider::class,
+        
         /*
          * Application Service Providers...
          */
@@ -178,6 +182,8 @@ return [
 
 
         App\Providers\PostRepositoryServiceProvider::class,
+        App\Providers\RolesServiceProvider::class,
+
     ],
 
     /*

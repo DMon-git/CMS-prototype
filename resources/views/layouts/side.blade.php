@@ -10,21 +10,22 @@
     		<li class="nav-item">
       		<a class="nav-link text-white" href="/dashboard"><i class="icon-speedometer"></i> Личный кабинет</a>
     		</li>
+        
+        @role('admin') 
+      		<li class="nav-item">
+        		<a class="nav-link text-white" href="/createPost"><i class="icon-speedometer"></i> Создать пост</a>
+      		</li>
 
-    		<li class="nav-item">
-      		<a class="nav-link text-white" href="/createPost"><i class="icon-speedometer"></i> Создать пост</a>
-    		</li>
+      		<li class="nav-item">
+        		<a class="nav-link text-white" href="/adminAllPosts"><i class="icon-speedometer"></i> Записи</a>
+      		</li>
 
-    		<li class="nav-item">
-      		<a class="nav-link text-white" href="/adminAllPosts"><i class="icon-speedometer"></i> Записи</a>
-    		</li>
+      		<li class="nav-item">
+        		<a class="nav-link text-white" href="/plugins"><i class="icon-speedometer"></i> Плагины</a>
+      		</li>
 
-    		<li class="nav-item">
-      		<a class="nav-link text-white" href="/plugins"><i class="icon-speedometer"></i> Плагины</a>
-    		</li>
-
-        @include('layouts.sidePlugins')
-
+          @include('layouts.sidePlugins')
+        @endrole
       </ul>
     </nav>
   </div>

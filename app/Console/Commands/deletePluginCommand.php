@@ -40,7 +40,6 @@ class deletePluginCommand extends Command
     public function handle()
     {
         $idPlugin = intval($this->argument('idPlugin'));
-        Log::debug("TEST: " . __FUNCTION__ . " idPlugin = " . $idPlugin);
 
         $Plugin = new Plugins();
         $pluginData = $Plugin->getDeleteCommandPlugin($idPlugin);
@@ -53,7 +52,7 @@ class deletePluginCommand extends Command
         
         $Plugin->setStatusPlugin($idPlugin, $Plugin::STATUS_NON_INSTALL);
 
-        return 0;
+        return true;
     }
 
     protected function getArguments()

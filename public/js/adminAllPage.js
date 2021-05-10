@@ -1,13 +1,33 @@
 window.onload = function () {
-	params = "";
+	params = "page=1";
 	ajaxPost("/getTableAllPosts", params, function(data){
 		data = JSON.parse(data);
 		showTableData(data);
 	});
 }
 
+function getTableData(elem) {
+	page = elem.id.split("_")[1];
+	params = "page="+page;
+
+	ajaxPost("/getTableAllPosts", params, function(data){
+		data = JSON.parse(data);
+		showTableData(data);
+	});
+
+	let ulPageLinks = document.querySelector("#ulPageLinks");
+	var countPages = ulPageLinks.children.length;
+
+	for (var i = 1; i <= countPages; i++) {
+		document.querySelector("#pageLink_"+i).parentNode.className = "page-item";
+	}
+
+	elem.parentNode.className = "page-item active";
+}
+
 function showTableData(data) {
-	let posts_table = document.querySelector("#posts_table");
+	let tableBody = document.querySelector("#tableBody");
+	tableBody.innerHTML = "";
 	
 	for (var i = 0; i < data.length; i++) {
 		var row = document.createElement('tr');
@@ -39,7 +59,7 @@ function showTableData(data) {
 		row.append(author);
 		row.append(action);
 
-		posts_table.append(row);
+		tableBody.append(row);
 	}	
 }
 

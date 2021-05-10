@@ -12,19 +12,24 @@
                 		<th>Автор</th>
                 		<th>Действие</th>
                 	</thead>
+                    <tbody id="tableBody">
+                        
+                    </tbody>
                 </table>
 
 
             </div>
-            <nav aria-label="...">
-              <ul class="pagination pagination-sm">
-                <li class="page-item active" aria-current="page">
-                  <span class="page-link">1</span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-              </ul>
-            </nav>
+            @if (!empty($pages)) 
+                <nav aria-label="...">
+                  <ul class="pagination pagination-sm" id="ulPageLinks">
+                    @for ($i = 1; $i <= $pages; $i++)
+                        <li class="page-item @if($i == 1) active @endif" aria-current="page">
+                            <a class="page-link" href="#" id="pageLink_{{ $i }}" onclick="getTableData(this)">{{ $i }}</a>
+                        </li>
+                    @endfor
+                  </ul>
+                </nav>
+            @endif
         </div>
     </div>
 </div>

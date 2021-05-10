@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
+use App\Http\Requests\IdValidateRequest;
+use App\Http\Requests\PageValidateRequest;
+use App\Http\Requests\UpdatePostRequest;
+use App\Http\Requests\AddPostRequest;
+
 class PostController extends Controller
 {
 
@@ -18,7 +23,7 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->Post = new Post();
+        $this->Post = Post::getInstance();
     }
 
     /**
@@ -42,15 +47,15 @@ class PostController extends Controller
      */
     public function adminAllPosts()
     {
-        return view('adminAllPosts');
+        $pages = $this->Post->getCountPages($this->Post::ALLPAGE_TABLE_PERPAGE);
+        return view('adminAllPosts', compact('pages'));
     }
 
     /**
      *
      */
-    public function getTablePosts(Request $request)
+    public function getTablePosts(PageValidateRequest $request)
     {
-        //  валидация
         //  проверка прав
         $page = $request->input('page');
         $data = $this->Post->getToTable($page);
@@ -61,7 +66,7 @@ class PostController extends Controller
     /**
      *
      */
-    public function deletePost(Request $request)
+    public function deletePost(IdValidateRequest $request)
     {
         $idPost = $request->input('id');
         $result = $this->Post->deletePost($idPost);
@@ -71,32 +76,22 @@ class PostController extends Controller
     /**
      * 
      */
-    public function updatePost(Request $request)
+    public function updatePost(UpdatePostRequest $request)
     {
-        //  валидация
-        //$data = $request->all();
-        $data['idPost'] = $request->input('id');
-        $data['titlePost'] = $request->input('title');
-        $data['contentPost'] = $request->input('content');
-        $data['publishPost']= $request->input('publish');
-
+        $data = $request->all();
         $result = $this->Post->updatePost($data);
-        return $result;
+        return true;
     }
 
     /**
      * 
      */
-    public function addPost(Request $request)
+    public function addPost(AddPostRequest $request)
     {
-        //  валидация
-        //$data = $request->all();
-        $data['idPost'] = $request->input('id');
-        $data['titlePost'] = $request->input('title');
-        $data['contentPost'] = $request->input('content');
-        $data['publishPost']= $request->input('publish');
+        $data = $request->all();
+        $data['uid_add']= auth()->user()->id;
 
         $result = $this->Post->addPost($data);
-        return $result;
+        return true;
     }
 }

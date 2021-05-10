@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+
+use App\Http\Requests\IdValidateRequest;
+use App\Http\Requests\PageValidateRequest;
+
 /**
  *  класс возвращает данные для страниц не требующих авторизации:
  *      страница всех постов, страница конкретного поста
@@ -20,14 +24,25 @@ class VisitorsController extends Controller
      */
     public function __construct()
     {
-    	$this->Post = new Post();
+    	$this->Post = Post::getInstance();
+    }
+
+    public function getAllPage()
+    {
+        $pages = $this->Post->getCountPages($this->Post::MAINPAGE_PERPAGE);
+        return view('main', compact('pages'));
+    }
+
+    public function getOnePage()
+    {
+        return view('post');
     }
 
     /**
      * @param Request $request
      * @return false|string
      */
-    public function getAllPosts(Request $request)
+    public function getAllPosts(PageValidateRequest $request)
     {
         //  валидация
 
@@ -42,7 +57,7 @@ class VisitorsController extends Controller
      * @param Request $request
      * @return false|string
      */
-    public function getOnePost(Request $request)
+    public function getOnePost(IdValidateRequest $request)
     {
         $idPost = $request->input('id');
         $data = $this->Post->getOnePost($idPost);
@@ -50,7 +65,7 @@ class VisitorsController extends Controller
         return $data;
     }
 
-    public function getComments(Request $request)
+    public function getComments(IdValidateRequest $request)
     {
         $idPost = $request->input('id');
         $Comment = new Comment();

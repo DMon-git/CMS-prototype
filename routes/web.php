@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 //  ------------------------   Без авторизации   ------------------------  //
     //  -----   Возврат вьюх   -----  //
+
 //	все запси
-Route::get('/', function () {
-    return view('main');
-})->name('main');
+Route::get('/', [App\Http\Controllers\VisitorsController::class, 'getAllPage'])->name('main');
 //	одна запись
-Route::get('/post', function () {
-    return view('post');
-})->name('post');
+Route::get('/post', [App\Http\Controllers\VisitorsController::class, 'getOnePage'])->name('post');
 
 //  -----   Действия   -----  //
 //  Получить все посты на страницу
@@ -52,35 +49,35 @@ Route::post('/addComment', [App\Http\Controllers\CommentController::class, 'addC
         //  -----   Админ   -----  //
     //  -----   Возврат вьюх   -----  //
 //	страница создания записи
-Route::get('/createPost', [App\Http\Controllers\PostController::class, 'createPost'])->name('createPost');
+Route::get('/createPost', [App\Http\Controllers\PostController::class, 'createPost'])->name('createPost')->middleware('role:admin');
 
 //	страница изменения записи
-Route::get('/updPost', [App\Http\Controllers\PostController::class, 'updPost'])->name('updPost');
+Route::get('/updPost', [App\Http\Controllers\PostController::class, 'updPost'])->name('updPost')->middleware('role:admin');
 
 //	страница всех записей
-Route::get('/adminAllPosts', [App\Http\Controllers\PostController::class, 'adminAllPosts'])->name('adminAllPosts');
+Route::get('/adminAllPosts', [App\Http\Controllers\PostController::class, 'adminAllPosts'])->name('adminAllPosts')->middleware('role:admin');
 
 //	страница плагинов
-Route::get('/plugins', [App\Http\Controllers\PluginController::class, 'plugins'])->name('plugins');
+Route::get('/plugins', [App\Http\Controllers\PluginController::class, 'plugins'])->name('plugins')->middleware('role:admin');
 
     //  -----   Действия   -----  //
 //  Получить записи для вывода в таблицу админа
-Route::post('/getTableAllPosts', [App\Http\Controllers\PostController::class, 'getTablePosts']);
+Route::post('/getTableAllPosts', [App\Http\Controllers\PostController::class, 'getTablePosts'])->middleware('role:admin');
 
 //  Удалить пост по id
-Route::post('/deletePost', [App\Http\Controllers\PostController::class, 'deletePost']);
+Route::post('/deletePost', [App\Http\Controllers\PostController::class, 'deletePost'])->middleware('role:admin');
 
 //  Обновить пост по id
-Route::post('/updatePost', [App\Http\Controllers\PostController::class, 'updatePost']);
+Route::post('/updatePost', [App\Http\Controllers\PostController::class, 'updatePost'])->middleware('role:admin');
 
 //  Создать пост 
-Route::post('/addPost', [App\Http\Controllers\PostController::class, 'addPost']);
+Route::post('/addPost', [App\Http\Controllers\PostController::class, 'addPost'])->middleware('role:admin');
 
 //  Получение данных о плагинах
-Route::post('/getPlugins', [App\Http\Controllers\PluginController::class, 'getAllPlugins']);
+Route::post('/getPlugins', [App\Http\Controllers\PluginController::class, 'getAllPlugins'])->middleware('role:admin');
 
 //  Установка плагина
-Route::post('/installPlugin', [App\Http\Controllers\PluginController::class, 'installPlugin']);
+Route::post('/installPlugin', [App\Http\Controllers\PluginController::class, 'installPlugin'])->middleware('role:admin');
 
 //  Удаление плагина
-Route::post('/deletePlugin', [App\Http\Controllers\PluginController::class, 'deletePlugin']);
+Route::post('/deletePlugin', [App\Http\Controllers\PluginController::class, 'deletePlugin'])->middleware('role:admin');

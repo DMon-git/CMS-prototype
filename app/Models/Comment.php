@@ -14,7 +14,7 @@ class Comment extends Model
     {
         //'uid_add' => $data['uid_add'],
         $result = $this->insertGetId([
-                    'id_post'   => $data['id_post'],
+                    'id_post' => $data['id_post'],
                     'id_user' => $data['id_user'],
                     'comment' => $data['comment'],
 
@@ -24,7 +24,7 @@ class Comment extends Model
 
     public function getCommentsOnPost($idPost)
     {
-    	$columns = ['id', 'id_post', 'id_user', 'comment', 'created_at', 'name'];
+    	$columns = ['post_comments.id', 'id_post', 'id_user', 'comment', 'post_comments.created_at', 'users.name'];
 
     	$data = $this->select($columns)
                      ->where('id_post', '=', $idPost)
