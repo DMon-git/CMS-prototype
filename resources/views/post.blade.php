@@ -15,6 +15,10 @@
             	<h5>Добавить комментарий:</h5>	
             	<div class="mb-3">
             		<textarea class="form-control" cols="10" rows="2" id="comment"> </textarea>
+                    <em>
+                        <label>Комментарий может состоять из русских и английских букв, цифр, знаков .,-? и пробела</label>
+                        <label>Длина комментария должна быть от 3 и до 255 символов</label>
+                    </em>
             	</div>
             	
             	<button class="btn btn-outline-secondary btn-sm" id="addComment" onclick="addComment()">Добавить</button>
