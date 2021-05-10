@@ -20,6 +20,28 @@ class PostRepository extends Model implements PostRepositoryInterface
     //  количество записей, выводимое на главной станице
     public const MAINPAGE_PERPAGE = 10; 
 
+
+    private static $instances = [];
+
+    protected function __construct() { }
+
+    protected function __clone() { }
+
+    public function __wakeup()
+    {
+        throw new \Exception("Cannot unserialize a singleton.");
+    }
+
+    public static function getInstance(): PostRepository
+    {
+        $cls = static::class;
+        if (!isset(self::$instances[$cls])) {
+            self::$instances[$cls] = new static();
+        }
+
+        return self::$instances[$cls];
+    }
+
     /**
      * @param $page
      * @return mixed|void
@@ -45,8 +67,6 @@ class PostRepository extends Model implements PostRepositoryInterface
                 $data[$i]['content'] = htmlspecialchars_decode($data[$i]['content']);
             }
         }
-        
-
         return $data;
     }
 
@@ -81,9 +101,9 @@ class PostRepository extends Model implements PostRepositoryInterface
         $columns = ['id', 'title', 'content', 'publish', 'created_at'];
 
         $data = $this->select($columns)
-            ->where('id', '=', $idPost)
-            ->get()
-            ->toArray();
+                     ->where('id', '=', $idPost)
+                     ->get()
+                     ->toArray();
 
         $data[0]['title'] = htmlspecialchars_decode($data[0]['title']);
         $data[0]['content'] = htmlspecialchars_decode($data[0]['content']);

@@ -24,7 +24,7 @@ class VisitorsController extends Controller
      */
     public function __construct()
     {
-    	$this->Post = new Post();
+    	$this->Post = Post::getInstance();
     }
 
     public function getAllPage()
