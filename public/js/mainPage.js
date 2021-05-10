@@ -45,7 +45,11 @@ function showPosts(posts) {
 		let linkTitle = document.createElement("a");
 		linkTitle.textContent = posts[i]['title'];
 		linkTitle.href = "/post?id="+posts[i]['id'];
-		linkTitle.className = "text-dark";
+		linkTitle.className = "text-dark pr-3";
+
+		let lableDate = document.createElement("lable");
+		lableDate.textContent = new Date(posts[i]['created_at']).toLocaleString();
+		lableDate.style = "float: right";
 
 		let divContent = document.createElement("div");
 		divContent.textContent = posts[i]['content'];
@@ -54,6 +58,7 @@ function showPosts(posts) {
 		postDiv.append(lableId);
 		postDiv.append(inputHiddenId);
 		postDiv.append(linkTitle);
+		postDiv.append(lableDate);
 		postDiv.append(divContent);
 
 		div_posts.append(postDiv);
