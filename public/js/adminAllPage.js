@@ -36,10 +36,13 @@ function showTableData(data) {
 		var num = document.createElement('td');
 		var title = document.createElement('td');
 		var author = document.createElement('td');
+		var dateAdd = document.createElement('td');
 		var action = document.createElement('td');
 
 		num.textContent = data[i]['id'];
-		title.textContent = data[i]['title'];
+		title.innerHTML = "<a href='/post?id="+num.textContent+"'>"+data[i]['title']+"</a>";
+		dateAdd.textContent = new Date(data[i]['created_at']).toLocaleString();
+
 		author.textContent = data[i]['uid_add'];
 
 		var dropdawn = '<div class="dropdown">'
@@ -57,6 +60,7 @@ function showTableData(data) {
 		row.append(num);
 		row.append(title);
 		row.append(author);
+		row.append(dateAdd);
 		row.append(action);
 
 		tableBody.append(row);
@@ -66,7 +70,6 @@ function showTableData(data) {
 function deletePost(elem) {
 	
 	var idBtn = elem.parentNode.id.split("_")[1];
-	console.log(idBtn);
 
 	params = "id="+idBtn;
 	ajaxPost("/deletePost", params, function(data){

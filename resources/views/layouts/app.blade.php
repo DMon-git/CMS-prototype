@@ -109,7 +109,6 @@
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", () => {
             const pageHeight = document.documentElement.scrollHeight;
-            console.log(pageHeight);
             document.querySelector('#sideBarMain').style.height = (pageHeight + 100) + "px";
           });
     </script>

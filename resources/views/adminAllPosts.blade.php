@@ -10,6 +10,7 @@
                 		<th>№</th>
                 		<th>Название</th>
                 		<th>Автор</th>
+                        <th>Дата создания</th>
                 		<th>Действие</th>
                 	</thead>
                     <tbody id="tableBody">

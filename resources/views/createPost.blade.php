@@ -9,11 +9,17 @@
             	<div class="mb-3">
             		<label class="form-label">Название поста</label>
                		<input type="text" name="name_post" id="name_post" class="form-control">
+                    <em>
+                        <label>Длина названия поста должна быть от 3 и до 255 символов</label>
+                    </em>
             	</div>
                 
                 <div class="mb-3">
                 	<label class="form-label">Содержание поста</label><br>
                 	<textarea class="form-control" cols="30" rows="10" id="contentPost"></textarea>
+                    <em>
+                        <label>Длина поста должна быть от 3 и до 1400 символов</label>
+                    </em>
                 </div>
 
                 <div class="mb-3">
