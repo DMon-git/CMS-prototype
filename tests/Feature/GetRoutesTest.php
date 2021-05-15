@@ -28,6 +28,45 @@ class GetRoutesTest extends TestCase
     }
 
     /** @test */
+    public function getpostsTest()
+    {
+        $response = $this->withSession(['banned' => false])
+                         ->post('/getposts', 
+                                [
+                                    '_token' => csrf_token(),
+                                    'page'   => 1
+                                ]
+                            );
+        $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function getonepostTest()
+    {
+        $response = $this->withSession(['banned' => false])
+                         ->post('/getonepost', 
+                                [
+                                    '_token' => csrf_token(),
+                                    'id'     => 2
+                                ]
+                            );
+        $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function getCommentsTest()
+    {
+        $response = $this->withSession(['banned' => false])
+                         ->post('/getComments', 
+                                [
+                                    '_token' => csrf_token(),
+                                    'id'     => 2
+                                ]
+                            );
+        $response->assertStatus(200);
+    }
+
+    /** @test */
     public function createPostTest()
     {
         $this->withoutMiddleware();

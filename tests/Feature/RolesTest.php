@@ -126,4 +126,37 @@ class RolesTest extends TestCase
                          ->post('/deletePlugin', ['_token' => csrf_token()]);
         $response->assertStatus(403);
     }
+
+    /** @test */
+    public function getuserinfoTest()
+    {
+        $user = User::find(2);
+
+        $response = $this->actingAs($user)
+                         ->withSession(['banned' => false])
+                         ->post('/getuserinfo', ['_token' => csrf_token()]);
+        $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function addCommentTest()
+    {
+        $user = User::find(2);
+
+        $response = $this->actingAs($user)
+                         ->withSession(['banned' => false])
+                         ->post('/addComment', 
+                                [
+                                    '_token'  => csrf_token(),
+                                    'id_post' => 2,
+                                    'comment' => "feature test"
+                                ]
+                            );
+        $response->assertStatus(200);
+    }
+
+    /*
+        
+
+    */
 }
