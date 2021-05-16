@@ -48,7 +48,11 @@ class installPluginCommand extends Command
         shell_exec( $pluginData['requireComand'] . " 2>/dev/null &");   
 
         $nameSideFile = "@include('layouts.".$pluginData['sideFile']. "" .$pluginData['name']."')";
-        file_put_contents("../resources/views/layouts/sidePlugins.blade.php", $nameSideFile, FILE_APPEND);
+
+        if (file_exists(__DIR__ . "/../resources/views/layouts/sidePlugins.blade.php")) {
+            file_put_contents("../resources/views/layouts/sidePlugins.blade.php", $nameSideFile, FILE_APPEND);
+        }
+        
 
         $Plugin->setStatusPlugin($idPlugin, $Plugin::STATUS_INSTALL);
         return true;
