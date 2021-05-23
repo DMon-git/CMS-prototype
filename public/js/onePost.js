@@ -20,7 +20,7 @@ function showPost(post) {
 
 
 	pTitle.innerHTML = '<center><h5>'+post[0]["title"]+'</h5></center>';
-	divContent.textContent = post[0]["content"];
+	divContent.innerHTML = post[0]["content"];
 
 }
 

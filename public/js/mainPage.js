@@ -52,7 +52,7 @@ function showPosts(posts) {
 		lableDate.style = "float: right";
 
 		let divContent = document.createElement("div");
-		divContent.textContent = posts[i]['content'];
+		divContent.innerHTML = posts[i]['content'];
 		divContent.className = "p-3 border";
 
 		postDiv.append(lableId);
